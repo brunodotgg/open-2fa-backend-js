@@ -5,13 +5,16 @@ const port = 7413
 
 app.get('/', (req, res) => {
     res.send({
+        title: 'Open 2FA',
+        description: 'Open 2FA is a two-factor authentication project',
+        github: 'https://github.com/brunotimsa/open-2fa-backend-js',
         docs: 'https://docs.2fa.pw'
     })
 })
 
 app.get('/token', (req, res) => {
     if(!req.header('X-SECRET')) {
-        res.send({
+        res.status(400).send({
             success: false,
             error: [
                 'Please include the secret via X-SECRET header',
@@ -29,6 +32,10 @@ app.get('/token', (req, res) => {
             ttl: 30 - (Math.floor(Date.now() / 1000) % 30),
         });
     }
+})
+
+app.get('/tea', (req, res) => {
+    res.status(418).send("☕");
 })
 
 app.listen(port, () => {
