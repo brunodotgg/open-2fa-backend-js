@@ -1,0 +1,17 @@
+{
+  "name": "open-2fa-backend-javascript",
+  "version": "1.0.0",
+  "description": "API Endpoint to generate TOTP and HOTP codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Timsa",
+  "license": "ISC",
+  "dependencies": {
+    "2fa": "^0.1.2",
+    "express": "^4.8.7",
+    "node-2fa": "^1.1.2",
+    "nodemon": "^2.0.4"
+  }
+}
